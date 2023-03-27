@@ -26,7 +26,7 @@
             }, "您尚未選擇!");
             $("#Member").validate({
                 submitHandler: function(form) {
-                    alert("success!");
+                    alert("請等待會員建立....");
                     form.submit();
                 },
                 rules: {
@@ -81,15 +81,7 @@
             });
         });
     </script>
-    <style type="text/css">
-        .error {
-             color: #D82424;
-             font-weight: normal;
-             font-family: "微軟正黑體";
-             display: inline;
-             padding: 1px;
-        }
-        </style>
+    <link rel="stylesheet" href="./css/error.css">
 </head>
 
 <body>
@@ -124,7 +116,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link" href="#">登入</a>
+                        <a class="nav-link" href="./log_in.html">登入</a>
                       </li>
                     </ul>
                 </div>
@@ -256,7 +248,7 @@
                             </div>
                             <div class="form-group row justify-content-center">
                                 <div class="col-sm-auto">
-                                    <p class="text-black-50">已經有帳號了嗎？ <a href="#" style="color:forestgreen;">登入</a>  </p> 
+                                    <p class="text-black-50">已經有帳號了嗎？ <a href="./log_in.html" style="color:forestgreen;">登入</a>  </p> 
                                 </div>
                             </div>
                         </form>
