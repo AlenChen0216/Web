@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- 目前缺一些頁面內容 e.g. 圖片....，以及資料驗證、送出後跳轉 主頁面 或 登入畫面的部份。 -->
+<!-- 目前缺一些頁面內容 e.g. 圖片....，送出後跳轉 主頁面 或 登入畫面的部份。 -->
+
 <head>
     <!-- 自定義CSS -->
     <link rel="stylesheet" href="css/member_style.css" />
@@ -14,9 +15,81 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js"></script>
     <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/localization/messages_zh_TW.js "></script>
 
     <title>彰師生鮮賣場</title>
 
+    <script>
+        $(document).ready(function($) {
+            $.validator.addMethod("notEqualsTo", function(value, element, arg) {
+                return arg != value;
+            }, "您尚未選擇!");
+            $("#Member").validate({
+                submitHandler: function(form) {
+                    alert("success!");
+                    form.submit();
+                },
+                rules: {
+                    account: {
+                        required: true,
+                        minlength: 4,
+                        maxlength: 10
+                    },
+                    pwd: {
+                        required: true,
+                        minlength: 6,
+                        maxlength: 12
+                    },
+                    pwd2: {
+                        required: true,
+                        equalTo: "#pwd"
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    year: {
+                        notEqualsTo:"0"
+                    },
+                    month: {
+                        notEqualsTo:"0"
+                    },
+                    day: {
+                        notEqualsTo:"0"
+                    },
+                    gender: {
+                        required: true
+                    },
+                    agree: {
+                        required: true
+                    },
+                },
+                messages: {
+                    account: {
+                        required: "必填",
+                        minlength: "太少",
+                        maxlength: "太多"
+                    },
+                    pwd:{
+                        minlength: "太少",
+                        maxlength: "太多"
+                    },
+                    pwd2: {
+                        equalTo: "兩次密碼不同"
+                    },
+                }
+            });
+        });
+    </script>
+    <style type="text/css">
+        .error {
+             color: #D82424;
+             font-weight: normal;
+             font-family: "微軟正黑體";
+             display: inline;
+             padding: 1px;
+        }
+        </style>
 </head>
 
 <body>
@@ -48,17 +121,22 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">登入</a>
+                      </li>
+                    </ul>
+                </div>
             </nav>
         </div>
     </header>
     <div class="container-fuild">
         <br><br><br>
-
-        <br><br>
         <!--------------------------------- 會員註冊的填寫欄 ------------------------------------>
         <div class="row justify-content-center">
             <div class="col-sm-4 offset-sm-1">
-                <div class="card text-center" style="width: 27rem ;">
+                <div class="card text-center" style="width: 35rem ;">
                     <!-- 填寫欄的名稱 -->
                     <div class="card-head">
                         <h1>會員註冊</h1>
@@ -67,8 +145,8 @@
                         <form action="member.php" name="Member" id="Member">
                             <!-- 帳號 -->
                             <div class="form-group row justify-content-center ">
-                                <label class="col-sm-3 control-label">帳號：</label>
-                                <div class="col-sm-5">
+                                <label class="col-sm-auto control-label">帳號：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <div class="col-sm-auto">
                                     <input type="text" class="form-inline" id="account" name="account"
                                         placeholder="限4-10個字">
                                 </div>
@@ -78,8 +156,8 @@
                             </div>
                             <!-- 密碼 -->
                             <div class="form-group row justify-content-center">
-                                <label class="col-sm-3 control-label">密碼：</label>
-                                <div class="col-sm-5">
+                                <label class="col-sm-auto control-label">密碼：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <div class="col-sm-auto">
                                     <input type="password" class="form-inline" id="pwd" name="pwd"
                                         placeholder="限6-12個字">
                                 </div>
@@ -89,8 +167,8 @@
                             </div>
                             <!-- 密碼確認 -->
                             <div class="form-group row justify-content-center">
-                                <label class="col-sm-3 control-label">密碼確認：</label>
-                                <div class="col-sm-5">
+                                <label class="col-sm-auto control-label">密碼確認：</label>
+                                <div class="col-sm-auto">
                                     <input type="password" class="form-inline" id="pwd2" name="pwd2" placeholder="">
                                 </div>
                             </div>
@@ -99,9 +177,9 @@
                             </div>
                             <!-- 信箱 -->
                             <div class="form-group row justify-content-center">
-                                <label class="col-sm-3 control-label">E-mail：</label>
-                                <div class="col-sm-5">
-                                    <input type="text" class="form-inline" id="email" name="email" placeholder="">
+                                <label class="col-sm-auto control-label">E-mail：&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <div class="col-sm-auto">
+                                    <input type="text" class="form-inline" id="email" name="email" placeholder="example@gmail.com">
                                 </div>
                             </div>
                             <div class="row">
@@ -109,7 +187,7 @@
                             </div>
                             <!-- 生日 -->
                             <div class="form-group row justify-content-center">
-                                <label class="col-sm-3 control-label">生日：</label>
+                                <label class="col-sm-auto control-label">生日：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                 <div class="col-sm-auto">
                                     <select name="year" id="year" class="form-control form-inline">
                                         <option value="0"></option>
@@ -137,8 +215,8 @@
                             </div>
                             <!-- 性別 -->
                             <div class="form-group row justify-content-center">
-                                <label class="col-sm-3 control-label">性別：</label>
-                                <div class="col-sm-5">
+                                <label class="col-sm-auto control-label">性別：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                <div class="col-sm-auto">
                                     <input type="radio" class="radio-inline" id="gender1" name="gender">男&nbsp;&nbsp;
                                     <input type="radio" class="radio-inline" id="gender2" name="gender">女
                                     <label for="gender" class="error"></label>
@@ -149,10 +227,12 @@
                             </div>
                             <!-- 條款 -->
                             <div class="form-group row justify-content-center">
-                                <div class="col-6">
+                                <div class="col-auto">
                                     <div class="checkbox">
                                         <label>
-                                            <input type="checkbox" id="agree" name="agree"> 我同意 <button type="button" class="btn btn-link btn-md" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+                                            <input type="checkbox" id="agree" name="agree"> 我同意 <button type="button"
+                                                class="btn btn-link btn-md" data-bs-toggle="modal"
+                                                data-bs-target="#exampleModal">
                                                 服務條款
                                             </button>
                                         </label>
@@ -170,7 +250,14 @@
                                 <div class="col-sm-auto">
                                     <label> <button type="reset" class="btn btn-primary">重 填</button> </label>
                                 </div>
-
+                            </div>
+                            <div class="row">
+                                &nbsp;
+                            </div>
+                            <div class="form-group row justify-content-center">
+                                <div class="col-sm-auto">
+                                    <p class="text-black-50">已經有帳號了嗎？ <a href="#" style="color:forestgreen;">登入</a>  </p> 
+                                </div>
                             </div>
                         </form>
                     </div>
