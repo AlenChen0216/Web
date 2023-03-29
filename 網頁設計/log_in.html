@@ -4,7 +4,7 @@
 
 <head>
     <!-- 自定義CSS -->
-    <link rel="stylesheet" href="css/member_style.css" />
+    <link rel="stylesheet" href="./css/error.css">
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,6 +24,7 @@
             $("#login").validate({
                 submitHandler: function(form) {
                     alert("驗證會員身份....");
+                    
                     form.submit();
                 },
                 rules: {
@@ -55,7 +56,6 @@
             });
         });
     </script>
-    <link rel="stylesheet" href="./css/error.css">
 </head>
 
 <body>
@@ -101,7 +101,7 @@
         <br><br><br>
         <!--------------------------------- 會員登入的填寫欄 ------------------------------------>
         <div class="row justify-content-center">
-            <div class="col-sm-4 offset-sm-1">
+            <div class="col-sm-4">
                 <div class="card text-center" style="width: 35rem ;">
                     <!-- 填寫欄的名稱 -->
                     <div class="card-head">

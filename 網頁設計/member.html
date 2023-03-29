@@ -4,7 +4,7 @@
 
 <head>
     <!-- 自定義CSS -->
-    <link rel="stylesheet" href="css/member_style.css" />
+    <link rel="stylesheet" href="./css/error.css">
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,6 +20,35 @@
     <title>彰師生鮮賣場</title>
 
     <script>
+        //--------預設生日的日期為當天日期--------
+        $(function(){
+            let time = new Date();
+            let year = time.getFullYear()-1911;
+            let month = time.getMonth();
+            let day = time.getDate()-1;
+            for (var i = 0; i < year; i++) {
+                if(i==0){
+                    $("#year").append("<option value='" + (i+1) + "' "+"selected"+">" + (year) + "</option>");
+                }else {
+                    $("#year").append("<option value='" + (i+1) + "'>" + (year - i) + "</option>");
+                }
+			}
+			for (var i = 0; i <= 11; i++) {
+                if(i==month){
+                    $("#month").append("<option value='" + i + "' "+"selected"+">" + (i+1) + "</option>");
+                }else{
+                    $("#month").append("<option value='" + i + "'>" + (i+1) + "</option>");
+                }
+			}
+			for (var i = 0; i <= 30; i++) {
+                if(i==day){
+                    $("#day").append("<option value='" + i + "' "+"selected"+">" + (i+1) + "</option>");
+                }else {
+                    $("#day").append("<option value='" + i + "'>" + (i+1) + "</option>");
+                }
+			}
+        })
+        //----------身份驗證-----------------------------
         $(document).ready(function($) {
             $.validator.addMethod("notEqualsTo", function(value, element, arg) {
                 return arg != value;
@@ -81,7 +110,6 @@
             });
         });
     </script>
-    <link rel="stylesheet" href="./css/error.css">
 </head>
 
 <body>
@@ -127,7 +155,7 @@
         <br><br><br>
         <!--------------------------------- 會員註冊的填寫欄 ------------------------------------>
         <div class="row justify-content-center">
-            <div class="col-sm-4 offset-sm-1">
+            <div class="col-sm-4">
                 <div class="card text-center" style="width: 35rem ;">
                     <!-- 填寫欄的名稱 -->
                     <div class="card-head">
@@ -181,21 +209,22 @@
                             <div class="form-group row justify-content-center">
                                 <label class="col-sm-auto control-label">生日：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                                 <div class="col-sm-auto">
-                                    <select name="year" id="year" class="form-control form-inline">
+                                    <select class="form-select" name="year" id="year" class="form-control form-inline">
                                         <option value="0"></option>
 
                                     </select>
                                 </div>
                                 年
                                 <div class="col-sm-auto">
-                                    <select name="month" id="month" class="form-control form-inline">
+                                    <select class="form-select" name="month" id="month" class="form-control form-inline">
                                         <option value="0"></option>
 
                                     </select>
                                 </div>
                                 月
+                                
                                 <div class="col-sm-auto">
-                                    <select name="day" id="day" class="form-control form-inline">
+                                    <select class="form-select" name="day" id="day" class="form-control form-inline">
                                         <option value="0"></option>
 
                                     </select>
