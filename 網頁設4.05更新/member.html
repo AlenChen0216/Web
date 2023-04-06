@@ -48,14 +48,8 @@
                         required: true,
                         email: true
                     },
-                    year: {
-                        notEqualsTo: "0"
-                    },
-                    month: {
-                        notEqualsTo: "0"
-                    },
-                    day: {
-                        notEqualsTo: "0"
+                    birthday:{
+                        required:true
                     },
                     gender: {
                         required: true
@@ -165,28 +159,12 @@
                                 placeholder="example@gmail.com">
                         </div>
                     </div>
-                    <!-- 生日 -->
-                    <!-- <div class="form-group row justify-content-center">
-                    <label class="col-sm-auto control-label">生日：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                    <div class="col-sm-auto">
-                        <select name="year" id="year" class="form-control form-inline">
-                            <option value="0"></option>
-                        </select>
+                    <div>
+                        生日
+                        <div class="form-floating mb-3">
+                            <input type="date" class="form-control rounded-4" name="birthday" id="birthday">
+                        </div>
                     </div>
-                    年
-                    <div class="col-sm-auto">
-                        <select name="month" id="month" class="form-control form-inline">
-                            <option value="0"></option>
-                        </select>
-                    </div>
-                    月
-                    <div class="col-sm-auto">
-                        <select name="day" id="day" class="form-control form-inline">
-                            <option value="0"></option>
-                        </select>
-                    </div>
-                    日
-                </div> -->
                     <!-- 性別 -->
                     <div class="d-flex justify-content-center p-3">
                         <label class=" control-label">性別：&nbsp;&nbsp;</label>
