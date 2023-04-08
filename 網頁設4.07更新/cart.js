@@ -1,0 +1,12 @@
+import "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"
+//匯入購物車
+$(function () {
+    console.log("LENF");
+    $('li:first').html('<div class="dropdown">    <div class="dropdown ml-auto">        <button type="button" class="btn" data-toggle="dropdown">            <i class="fas fa-cart-plus" style="color: white;"></i>            <span class="badge badge-pill badge-warning">2</span>        </button>        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuReference" style="min-width:400px;">            <div class="px-4 py-3">                <table class="table">                    <thead>                        <tr>                            <th scope="col"></th>                            <th scope="col">商品名稱</th>                            <th scope="col">數量</th>                            <th scope="col">小計</th>                        </tr>                    </thead>                    <tbody>                        <!--   車內商品   -->                        <tr>                            <th scope="row">                                <a id="remove" class="re" href="#">                                    <i class="fas fa-trash-alt"></i>                            </th>                            <td>吳郭魚</td>                            <td>1隻</td>                            <td class="text-right">$65</td>                        </tr>                        <tr>                            <th scope="row">                                <a id="remove" class="re" href="#">                                    <i class="fas fa-trash-alt"></i>                                </a>                            </th>                            <td>小卷</td>                            <td>1盒</td>                            <td class="text-right">$100</td>                        </tr>                    </tbody>                </table>                <a href="#" class="btn btn-primary btn-block"> 結帳去</a>            </div>        </div>    </div>   ' );
+    $('.re').click(function(){
+        console.log("HIFJG");
+        $(this).closest("tr").remove();
+        var content=$('.badge').html();
+        $('.badge').html(content-1);
+    });
+});
