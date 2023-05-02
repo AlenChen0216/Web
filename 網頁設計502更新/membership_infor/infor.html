@@ -1,0 +1,53 @@
+<div class="modal-content rounded-5 shadow">
+    <div>
+      <h2 class="fw-bold mb-0 ps-5 pt-4 pb-3">會員資料</h2>
+    </div>
+    <div class="modal-body p-5 pt-0  ">
+      <form>
+        <div>
+          <div class="row g-3 pb-2">
+            <div class="col-auto">
+              <label for="account" class="col-form-label">帳號:</label>
+            </div>
+            <div class="col-auto">
+              <input class="form-control" type="text" value="帳號" id="account" disabled readonly>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="row g-3 pb-2">
+            <div class="col-auto">
+              <label for="e_mail" class="col-form-label">信箱:</label>
+            </div>
+            <div class="col-auto">
+              <input type="text" class="form-control" id="e_mail" placeholder="">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="row g-3 pb-2">
+            <div class="col-auto">
+              <label for="account" class="col-form-label">生日:</label>
+            </div>
+            <div class="col-auto">
+              <input class="form-control" type="date" value="" id="birthday" disabled readonly>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="row g-3 pb-5">
+            <div class="col-auto">
+              <label for="gender" class="col-form-label pe-2">性別:</label>
+              <input type="radio" class="radio-inline" id="gender1" name="gender">男&nbsp;&nbsp;
+              <input type="radio" class="radio-inline" id="gender2" name="gender">女
+            </div>
+          </div>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary ms-5">修改資料</button>
+          <button type="submit" class="btn btn-primary ms-5">登出會員</button>
+        </div>
+      </form>
+    </div>
+  </div>
