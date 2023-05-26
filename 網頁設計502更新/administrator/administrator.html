@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- 自定義CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- 一些icon    -->
+    <script src="https://kit.fontawesome.com/388c8d3892.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/cart.css">
+
+    <title>彰師生鮮賣場</title>
+
+</head>
+
+<body>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS   這個跟購物車下拉有關，不要動-->
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!-- -----------------------------------------------------主程式--------------------------------------------- -->
+    <!-- -------------導覽列----------------- -->
+    <header class="fixed-top">
+        <div class="container-fuild mb-2">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark ps-4 pe-4">
+                <a class="navbar-brand" href="index.html">
+                    <b>
+                        <h2>彰師生鮮賣場</h2>
+                    </b>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./log_in.html">註冊/登入</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <div class="input-group">
+                            <input class="form-control me-1" type="text" placeholder="輸入商品名稱" />
+                            <button class="btn btn-warning" type="submit">搜尋商品</button>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <br><br><br><br><br>
+    <!-- --------------------------------------- -->
+
+    <div class="modal modal-signin position-static d-block" tabindex="-1" role="dialog" id="modalSignin">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content rounded-5 shadow">
+                <div>
+                    <h2 class="fw-bold mb-0 text-center pt-5 pb-4">管理員:admin</h2>
+                </div>
+                <div class="modal-body ps-4">
+                    <div class="ps-5">
+                        <a href="allCommodity.html" class="btn btn-primary ms-5 mb-2">商品一覽</a>
+                        <a href="addCommodity.html" class="btn btn-primary ms-5 mb-2">新增商品</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ---------------------------------------------------------- -->
+
+    <!-- -------------網頁最下方版權聲明欄------------ -->
+    <br><br><br>
+    <div class="bg-dark text-secondary px-5 py-4 text-center">
+        <div class="py-5">
+            <h1 class=" fw-bold text-white">版權聲明</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="fs-5 mb-4">此網站內容僅供國立彰化師範大學課程"網際網路資料庫程式設計"期末專題使用，請勿用於商業或者其他用途</p>
+            </div>
+        </div>
+    </div>
+    <!-- -------------------------------------------- -->
