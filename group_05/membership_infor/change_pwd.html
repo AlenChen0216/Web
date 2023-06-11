@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="./css/error.css">
+<br>
+<div class="row shadow p-3 m-3 bg-body rounded">
+  <form action="change_pwd.php" name="pwd" id="pwd" method="POST">
+    <div class="row">
+      <!-- 下面 -->
+      <div class="col-lg-9">
+        <h2 class="fw-bold mb-0 ps-3 pt-4 pb-4">修改密碼</h2>
+        <table class="table table-borderless table-responsive ms-3">
+          <thead>
+            <!-- 當前密碼 -->
+            <tr>
+              <th scope="col" class="col-lg-2">
+                <label for="old" class="col-form-label">當前密碼:</label>
+              </th>
+              <th scope="col">
+                <div class="col-lg-6">
+                  <input type="password" class="form-control" name="old" id="old" placeholder="請輸入密碼">
+                </div>
+              </th>
+            </tr>
+            <!-- 新密碼 -->
+            <tr>
+              <th scope="col" class="col-lg-2">
+                <label for="new" class="col-form-label">新密碼:</label>
+              </th>
+              <th scope="col">
+                <div class="col-lg-6">
+                  <input type="password" class="form-control" id="new" name="new" placeholder="限6~12個字">
+                </div>
+              </th>
+            </tr>
+            <!-- 確認密碼 -->
+            <tr>
+              <th scope="col" class="col-lg-2">
+                <label for="check" class="col-form-label">密碼確認:</label>
+              </th>
+              <th scope="col">
+                <div class="col-lg-6">
+                  <input type="password" class="form-control" id="check" name="check" placeholder="確認新密碼">
+                </div>
+              </th>
+            </tr>
+
+          </thead>
+        </table>
+        <div class="ms-5">
+          <button type="reset" class="btn btn-primary ms-5 mb-2">重新填寫</button>
+          <button type="submit" class="btn btn-primary ms-5 mb-2">確認修改</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
